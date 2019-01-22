@@ -1,0 +1,64 @@
+<?php
+define('EmpireCMSAdmin','1');
+require("../../../class/connect.php");
+require("../../../class/db_sql.php");
+require("../../../class/functions.php");
+require("../../../data/dbcache/class.php");
+$link=db_connect();
+$empire=new mysqlquery();
+$editor=2;
+include('tranmorefun.php');
+tranmore_LoadIconvFile();
+$ckuserid=(int)$_POST['ckuserid'];
+$ckusername=RepPostVar(tranmore_DoIconv($_POST['ckusername']));
+$ckrnd=RepPostVar($_POST['ckrnd']);
+$loginecmsotherpass=RepPostVar($_POST['otherpass']);
+$loginecmsothertime=(int)$_POST['otherrndtime'];
+$loginecmsotherrndtwo=RepPostVar($_POST['otherrndtwo']);
+$ckouttime=1800;
+DoECheckOtherRnd($ckuserid,$ckusername,$ckrnd,$loginecmsotherpass,$loginecmsothertime,$loginecmsotherrndtwo,0,$ckouttime);
+//验证用户
+$lur=is_login_other($ckuserid,$ckusername,$ckrnd);
+$logininid=$lur['userid'];
+$loginin=$lur['username'];
+$loginrnd=$lur['rnd'];
+$loginlevel=$lur['groupid'];
+$loginadminstyleid=$lur['adminstyleid'];
+//ehash
+$ecms_hashur=hReturnEcmsHashStrAll();
+$thissessid=RepPostVar($_POST['PHPSESSID']);
+if(isset($thissessid)&&$thissessid!=session_id())
+{
+	session_id($thissessid);
+	@session_start();
+	define('EmpireCMSDefSession',TRUE);
+}
+if(!defined('EmpireCMSDefSession'))
+{
+	session_start();
+	define('EmpireCMSDefSession',TRUE);
+}
+tranmore_CheckUserLogin($ckuserid,$ckusername,$ckrnd);
+
+$enews=$_POST['enews'];
+if(empty($enews))
+{
+	$enews=$_GET['enews'];
+}
+if($enews=='DoFlashTranMore')//上传图片
+{
+	$file=$_FILES['Filedata']['tmp_name'];
+    $file_name=$_FILES['Filedata']['name'];
+    $file_type=$_FILES['Filedata']['type'];
+    $file_size=$_FILES['Filedata']['size'];
+	$classid=(int)$_POST['classid'];
+	$type=1;
+	tranmore_TranFile($file,$file_name,$file_type,$file_size,$classid,$type,$_POST,$logininid,$loginin);
+}
+else
+{
+	printerror("ErrorUrl","history.go(-1)");
+}
+db_close();
+$empire=null;
+?>

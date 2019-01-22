@@ -1,0 +1,343 @@
+<?php
+if(!defined('InEmpireCMS'))
+{
+	exit();
+}
+$r=ReturnLeftLevel($loginlevel);
+//图片识别
+if(stristr($_SERVER['HTTP_USER_AGENT'],'MSIE 6.0'))
+{
+	$menufiletype='.gif';
+}
+else
+{
+	$menufiletype='.png';
+}
+?>
+<HTML>
+<HEAD>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<TITLE>帝国CMS － 稳定可靠、安全省心</TITLE>
+<LINK href="adminstyle/2/adminmain.css" rel=stylesheet>
+<STYLE>
+.flyoutLink A {
+	COLOR: black; TEXT-DECORATION: none; color:#c8ced5; line-height:33px;height:33px;
+}
+.flyoutLink A:hover {
+	COLOR: black; TEXT-DECORATION: none; color:#fff; line-height:33px;height:33px;
+}
+
+.flyoutMenu {
+	BACKGROUND-COLOR: none
+}
+.flyoutMenu TD.flyoutLink {
+	BORDER: none; CURSOR: hand; PADDING-TOP: 0; color:#c8ced5; line-height:33px;height:33px;
+}
+.flyoutMenu TD.flyoutLink:hover {
+	BORDER: none; CURSOR: hand; PADDING-TOP: 0; color:#fff; line-height:33px;height:33px;
+}
+.flyoutMenu1 {
+	BACKGROUND-COLOR: none; line-height:33px;height:33px;
+}
+.flyoutMenu1 TD.flyoutLink1 {
+	BORDER: none; CURSOR: hand; PADDING-TOP: 0; line-height:33px;height:33px;
+}
+</STYLE>
+<SCRIPT>
+function switchSysBar(){
+	if(switchPoint.innerText==3)
+	{
+		switchPoint.innerText=4
+		document.all("frmTitle").style.display="none"
+	}
+	else
+	{
+		switchPoint.innerText=3
+		document.all("frmTitle").style.display=""
+	}
+}
+function switchSysBarInfo(){
+	switchPoint.innerText=3
+	document.all("frmTitle").style.display=""
+}
+
+function about(){
+	window.showModalDialog("adminstyle/2/page/about.htm","ABOUT","dialogwidth:300px;dialogheight:150px;center:yes;status:no;scroll:no;help:no");
+}
+
+function over(obj){
+		if(obj.className=="flyoutLink")
+		{
+			obj.style.backgroundColor='none'
+			obj.style.borderColor = 'none'
+		}
+		else if(obj.className=="flyoutLink1")
+		{
+		    obj.style.backgroundColor='none'
+			obj.style.borderColor = 'none'				
+		}
+}
+function out(obj){
+		if(obj.className=="flyoutLink")
+		{
+			obj.style.backgroundColor='none'
+			obj.style.borderColor = 'none'
+		}
+		else if(obj.className=="#flyoutLink1")
+		{
+		    obj.style.backgroundColor='none'
+			obj.style.borderColor = 'none'				
+		}
+}
+
+function show(d){
+	if(obj=document.all(d))	obj.style.visibility="visible";
+
+}
+function hide(d){
+	if(obj=document.all(d))	obj.style.visibility="hidden";
+}
+
+function JumpToLeftMenu(url){
+	document.getElementById("left").src=url;
+}
+function JumpToMain(url){
+	document.getElementById("main").src=url;
+}
+
+function tododisplay(ss){
+	if(ss=="ecmsinfomenu") 
+	{
+  		document.getElementById('ecmsinfomenu').style.display="";
+		document.getElementById('ecmssysmenu').style.display="none";
+	}
+	else
+	{
+  		document.getElementById('ecmsinfomenu').style.display="none";
+		document.getElementById('ecmssysmenu').style.display="";
+	}
+}
+</SCRIPT>
+</HEAD>
+<BODY bgColor="#e1e4e7" leftMargin=0 topMargin=0>
+<TABLE width="100%" height="100%" border=0 cellpadding="0" cellSpacing=0>
+<tr>
+<td height="80">
+
+  <TABLE width="100%" height="80" border=0 cellpadding="0" cellSpacing=0 background="adminstyle/2/images/topbg.gif">
+    <TBODY>
+      <TR> 
+        <TD width="212"><div align="center"><a href="main.php<?=$ecms_hashur['whehref']?>" target="main" title="帝国网站管理系统"><img src="adminstyle/2/images/logo.png" border="0"></a></div></TD>
+		<TD height=60> 
+			<TABLE height="80" border=0 cellpadding="0" cellSpacing=0>
+                <TBODY>
+                  <TR align=middle> 
+                    <TD width=80 onmouseout="this.style.backgroundColor=''" onmouseover="this.style.backgroundColor='#e2e2e2';tododisplay('ecmsinfomenu');" onclick="switchSysBarInfo();JumpToLeftMenu('ListEnews.php<?=$ecms_hashur['whehref']?>');" style="CURSOR: hand"> 
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr> 
+                          <td><div align="center"><IMG height=32 src="adminstyle/2/images/info<?=$menufiletype?>" width=32 border=0 title="信息管理"></div></td>
+                        </tr>
+                        <tr> 
+                          <td height="23"><div align="center"><font color="#3c434c"><strong>信息管理</strong></font></div></td>
+                        </tr>
+                      </table></TD>
+                    <TD width=80 onmouseout="this.style.backgroundColor=''" onmouseover="this.style.backgroundColor='#e2e2e2';tododisplay('ecmssysmenu');" onclick="return false;" style="CURSOR: hand"> 
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr> 
+                          <td><div align="center"><IMG height=32 src="adminstyle/2/images/other<?=$menufiletype?>" width=32 border=0 title="功能菜单"></div></td>
+                        </tr>
+                        <tr> 
+                          <td height="23"><div align="center"><font color="#3c434c"><strong>功能菜单</strong></font></div></td>
+                        </tr>
+                      </table></TD>
+                    
+                  </TR>
+                </TBODY>
+              </TABLE>
+        
+      </TD>
+		<TD width="351"><div align="right">用户：<a href="user/EditPassword.php<?=$ecms_hashur['whehref']?>" target="main"><b><?=$loginin?></b></a>&nbsp;&nbsp;&nbsp;[<a href="#ecms" onclick="if(confirm('确认要退出?')){JumpToMain('enews.php?enews=exit<?=$ecms_hashur['href']?>');}">退出</a>]&nbsp;&nbsp;&nbsp;&nbsp;</div></TD>
+      </TR>
+    </TBODY>
+  </TABLE>
+
+</td></tr>
+<tr><td height="33">
+
+  <TABLE width="100%" height="33" border=0 cellpadding="0" cellSpacing=0 style="background:#32383f url(adminstyle/2/images/a2.gif) no-repeat right">
+  <form name="chmpform" method="post" action="enews.php" onsubmit="return confirm('确认要切换访问端？');">
+    <TBODY>
+      <TR> 
+        <TD class=flyoutMenu width="220"><img src="adminstyle/2/images/a1.gif" border="0"></TD>   
+		    <TD width="77%" height="33"> 
+              <TABLE class=flyoutMenu border=0 id="ecmsinfomenu">
+                <TBODY>
+                  <TR align=middle> 
+                    <TD width="60" class="flyoutLink" onclick="JumpToMain('AddInfoChClass.php<?=$ecms_hashur['whehref']?>');" onmouseover="over(this)" onmouseout="out(this)">增加信息</TD>
+                    <TD width="60" class="flyoutLink" onclick="JumpToMain('ListAllInfo.php<?=$ecms_hashur['whehref']?>');" onmouseover="over(this)" onmouseout="out(this)">管理信息</TD>
+                    <TD width="60" class="flyoutLink" onclick="JumpToMain('ListAllInfo.php?ecmscheck=1<?=$ecms_hashur['ehref']?>');" onmouseover="over(this)" onmouseout="out(this)">审核信息</TD>
+                    <TD width="60" class="flyoutLink" onclick="JumpToMain('workflow/ListWfInfo.php<?=$ecms_hashur['whehref']?>');" onmouseover="over(this)" onmouseout="out(this)">签发信息</TD>
+					<?php
+					if($r[dopl])
+					{
+					?>
+                    <TD width="60" class="flyoutLink" onclick="JumpToMain('openpage/AdminPage.php?leftfile=<?=urlencode('../pl/PlNav.php'.$ecms_hashur['whehref'])?>&mainfile=<?=urlencode('../pl/PlMain.php'.$ecms_hashur['whehref'])?>&title=<?=urlencode('管理评论')?><?=$ecms_hashur['ehref']?>');" onmouseover="over(this)" onmouseout="out(this)">管理评论</TD>
+					<?php
+					}
+					?>
+                    <TD width="60" class="flyoutLink" onclick="JumpToMain('sp/UpdateSp.php<?=$ecms_hashur['whehref']?>');" onmouseover="over(this)" onmouseout="out(this)">更新碎片</TD>
+					<TD width="60" class="flyoutLink" onclick="JumpToMain('special/UpdateZt.php<?=$ecms_hashur['whehref']?>');" onmouseover="over(this)" onmouseout="out(this)">更新专题</TD>
+					<?php
+					if($r[dochangedata])
+					{
+					?>
+                    <TD width="60" class="flyoutLink" onclick="JumpToMain('ReHtml/ChangeData.php<?=$ecms_hashur['whehref']?>');" onmouseover="over(this)" onmouseout="out(this)">数据更新</TD>
+					<?php
+					}
+					?>
+                    <TD width="60" class="flyoutLink" onclick="JumpToMain('main.php<?=$ecms_hashur['whehref']?>');" onmouseover="over(this)" onmouseout="out(this)">后台首页</TD>
+                    <TD width="60" class="flyoutLink" onclick="window.open('../../');" onmouseover="over(this)" onmouseout="out(this)">网站首页</TD>
+                    <TD width="60" class="flyoutLink" onclick="window.open('map.php<?=$ecms_hashur['whehref']?>','','width=1250,height=760,scrollbars=yes,resizable=yes,top=80,left=120');" onmouseover="over(this)" onmouseout="out(this)">后台地图</TD>
+                  </TR>
+                </TBODY>
+              </TABLE>
+              <TABLE class=flyoutMenu border=0 id="ecmssysmenu" style="display:none">
+                <TBODY>
+                  <TR align=middle> 
+                    <TD width="60" class="flyoutLink" onclick="JumpToMain('user/EditPassword.php<?=$ecms_hashur['whehref']?>');" onmouseover="over(this)" onmouseout="out(this)">修改资料</TD>
+					<?php
+					if($r[doclass])
+					{
+					?>
+                    <TD width="60" class="flyoutLink" onclick="JumpToMain('ListClass.php<?=$ecms_hashur['whehref']?>');" onmouseover="over(this)" onmouseout="out(this)">管理栏目</TD>
+					<?php
+					}
+					?>
+					<?php
+					if($r[dozt])
+					{
+					?>
+                    <TD width="60" class="flyoutLink" onclick="JumpToMain('special/ListZt.php<?=$ecms_hashur['whehref']?>');" onmouseover="over(this)" onmouseout="out(this)">管理专题</TD>
+					<?php
+					}
+					?>
+					<?php
+					if($r[docj])
+					{
+					?>
+                    <TD width="60" class="flyoutLink" onclick="JumpToMain('ListInfoClass.php<?=$ecms_hashur['whehref']?>');" onmouseover="over(this)" onmouseout="out(this)">管理采集</TD>
+					<?php
+					}
+					?>
+					<?php
+					if($r[dofile])
+					{
+					?>
+                    <TD width="60" class="flyoutLink" onclick="JumpToMain('file/ListFile.php?type=9<?=$ecms_hashur['ehref']?>');" onmouseover="over(this)" onmouseout="out(this)">管理附件</TD>
+					<?php
+					}
+					?>
+					<?php
+					if($r[dosp])
+					{
+					?>
+                    <TD width="60" class="flyoutLink" onclick="JumpToMain('sp/ListSp.php<?=$ecms_hashur['whehref']?>');" onmouseover="over(this)" onmouseout="out(this)">管理碎片</TD>
+					<?php
+					}
+					?>
+					<?php
+					if($r[dotags])
+					{
+					?>
+                    <TD width="60" class="flyoutLink" onclick="JumpToMain('tags/ListTags.php<?=$ecms_hashur['whehref']?>');" onmouseover="over(this)" onmouseout="out(this)">管理TAGS</TD>
+					<?php
+					}
+					?>
+					<?php
+					if($r[dogbook])
+					{
+					?>
+                    <TD width="60" class="flyoutLink" onclick="JumpToMain('tool/gbook.php<?=$ecms_hashur['whehref']?>');" onmouseover="over(this)" onmouseout="out(this)">管理留言</TD>
+					<?php
+					}
+					?>
+					<?php
+					if($r[dofeedback])
+					{
+					?>
+                    <TD width="60" class="flyoutLink" onclick="JumpToMain('tool/feedback.php<?=$ecms_hashur['whehref']?>');" onmouseover="over(this)" onmouseout="out(this)">管理反馈</TD>
+					<?php
+					}
+					?>
+					<?php
+					if($r[dodownerror])
+					{
+					?>
+                    <TD width="60" class="flyoutLink" onclick="JumpToMain('DownSys/ListError.php<?=$ecms_hashur['whehref']?>');" onmouseover="over(this)" onmouseout="out(this)">错误报告</TD>
+					<?php
+					}
+					?>
+                  </TR>
+                </TBODY>
+              </TABLE></TD>
+            <TD width="22%"><div align="right">
+<?php
+if($r['dochmoreport']&&$public_r['ckhavemoreport'])
+{
+?>
+  访问端:
+  <?=Moreport_eReturnMoreportSelect($ecms_config['sets']['selfmoreportid'])?>
+  <input type="submit" name="Submit" value="切换">
+  <input name="enews" type="hidden" id="enews" value="ChangeMoreportAdmin">
+  <?=$ecms_hashur['form']?>
+	&nbsp;&nbsp;
+<?php
+}
+?>
+			</div></TD>
+      </TR>
+    </TBODY>
+	</form>
+  </TABLE>
+
+</td></tr>
+<tr><td height="100%" bgcolor="#ffffff">
+
+  <TABLE width="100%" height="100%" cellpadding="0" cellSpacing=0 border=0 borderColor="#ff0000">
+  <TBODY>
+    <TR> 
+      <TD width="123" valign="top" bgcolor="#e1e4e7">
+		<IFRAME frameBorder="0" id="dorepage" name="dorepage" scrolling="no" src="DoTimeRepage.php<?=$ecms_hashur['whhref']?>" style="HEIGHT:0;VISIBILITY:inherit;WIDTH:0;Z-INDEX:1"></IFRAME>
+      </TD>
+      <TD noWrap id="frmTitle">
+		<IFRAME frameBorder="0" id="left" name="left" scrolling="auto" src="ListEnews.php<?=$ecms_hashur['whehref']?>" style="HEIGHT:100%;VISIBILITY:inherit;WIDTH:200px;Z-INDEX:2"></IFRAME>
+      </TD>
+      <TD>
+		<TABLE border=0 cellPadding=0 cellSpacing=0 height="100%" bgcolor="#32383f">
+          <TBODY>
+            <tr> 
+              <TD onclick="switchSysBar()" style="HEIGHT:100%;"> <font style="COLOR:c8ced5;CURSOR:hand;FONT-FAMILY:Webdings;FONT-SIZE:9pt;"> 
+                <SPAN id="switchPoint" title="打开/关闭左边导航栏">3</SPAN></font> 
+          </TBODY>
+        </TABLE>
+      </TD>
+      <TD width="100%">
+		<TABLE height="100%" cellSpacing=0 cellPadding=0 width="100%" align="right" border=0>
+          <TBODY>
+            <TR> 
+              <TD align=right>
+				<IFRAME id="main" name="main" style="WIDTH: 100%; HEIGHT: 100%" src="main.php<?=$ecms_hashur['whehref']?>" frameBorder=0></IFRAME>
+              </TD>
+            </TR>
+          </TBODY>
+        </TABLE>
+      </TD>
+    </TR>
+  </TBODY>
+  </TABLE>
+
+</td></tr>
+</TABLE>
+
+</BODY>
+</HTML>

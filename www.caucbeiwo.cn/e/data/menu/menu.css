@@ -1,0 +1,87 @@
+/* CSS Document */
+.menu1 {
+	background-image: url(folder1.png);
+	background-repeat: no-repeat;
+	height: 17px;
+	left: 32px;
+	padding-left: 32px;
+	cursor: hand;
+}
+.menu2 {
+	background-image: url(folder2.png);
+	background-repeat: no-repeat;
+	height: 17px;
+	left: 32px;
+	padding-left: 32px;
+	cursor: hand;
+}
+.menu3 {
+	background-image: url(folder3.png);
+	background-repeat: no-repeat;
+	height: 17px;
+	left: 32px;
+	padding-left: 32px;
+	cursor: hand;
+}
+.menu4{
+	background-image: url(folder4.png);
+	background-repeat: no-repeat;
+	height: 17px;
+	left: 32px;
+	padding-left: 32px;
+	cursor: hand;
+}
+.list{
+	padding-left: 20px;
+	background-image: url(list.gif);
+	background-repeat: repeat-y;
+}
+.list1{
+	padding-left: 20px;
+}
+.file{
+	background-image: url(file.png);
+	background-repeat: no-repeat;
+	height: 18px;
+	cursor: hand;
+	padding-left: 32px;
+}
+.file1 {
+	background-image: url(file1.png);
+	background-repeat: no-repeat;
+	height: 18px;
+	cursor: hand;
+	padding-left: 32px;
+}
+body {
+	font:12px "Microsoft YaHei","Segoe UI",Tahoma,Arial;
+	font-size: 9pt;
+	color: #c8ced5;
+	background-color: #3c434c;
+}
+td {font-size: 9pt;}
+a {
+	font-size: 9pt;
+	color: #c8ced5;
+	text-decoration: none;
+	cursor:pointer;
+}
+a:hover {
+	font-size: 9pt;
+	color: #ff9600;
+	text-decoration: none;
+	position: relative;
+	font-weight:400;
+}
+a:active {
+	font-size: 9pt;
+	color: #ff9600;
+	text-decoration: none;
+}
+.test {
+	font-size:24px;
+	background-color:#FF0000;
+}
+#home {
+	padding:10px 0;}
+b { color:#ff9600;}

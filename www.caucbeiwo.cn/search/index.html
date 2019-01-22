@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>高级搜索 - Powered by EmpireCMS</title>
+<link href="/skin/default/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/skin/default/js/tabs.js"></script>
+<script src="/e/data/images/setday.js"></script>
+</head>
+<body class="listpage">
+[!--temp.dtheader--]
+<table width="100%" border="0" cellspacing="10" cellpadding="0">
+	<tr valign="top">
+		<td class="list_content"><table width="100%" border="0" cellspacing="0" cellpadding="0" class="position">
+				<tr>
+					<td>现在的位置：<a href='/'>首页</a>&nbsp;>&nbsp;<a href='../search/'>高级搜索</a>&nbsp;></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="box">
+				<tr>
+					<td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td><form action='/e/search/index.php' method="post" name="search_news" id="search_news">
+									<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td width="54%"><table width="100%" border="0" cellpadding="6" cellspacing="0">
+													<tr>
+														<td bgcolor="#F4F4F4"><strong>搜索范围</strong></td>
+													</tr>
+											</table></td>
+											<td width="46%"><table width="100%" border="0" cellpadding="6" cellspacing="0">
+													<tr>
+														<td bgcolor="#F4F4F4"><strong>搜索栏目</strong></td>
+													</tr>
+											</table></td>
+										</tr>
+										<tr>
+											<td valign="top"><table width="100%" border="0" cellpadding="6" cellspacing="0">
+													<tr>
+														<td><input type="radio" name="show" value="title" checked="checked" />
+															标题
+															<input type="radio" name="show" value="smalltext" />
+															简介
+															<input type="radio" name="show" value="newstext" />
+															内容
+															<input type="radio" name="show" value="writer" />
+															作者
+															<input name="show" type="radio" value="title,smalltext,newstext,writer" />
+															不限</td>
+													</tr>
+												</table>
+													<br />
+													<table width="100%" border="0" cellpadding="6" cellspacing="0">
+														<tr bgcolor="#F4F4F4">
+															<td><strong>时间限制</strong><font color="#666666">(0000-00-00为不限制)</font></td>
+														</tr>
+														<tr>
+															<td height="30" valign="top">从
+																<input name="starttime" type="text" value="0000-00-00" size="12" onclick="setday(this)" />
+																到
+																<input name="endtime" type="text" value="0000-00-00" size="12" onclick="setday(this)" />
+																之间的数据</td>
+														</tr>
+														<tr>
+															<td bgcolor="#F4F4F4"><strong>价格限制</strong><font color="#666666">(商城模型中有效,0为不限制)</font></td>
+														</tr>
+														<tr>
+															<td>从
+																<input name="startprice" type="text" id="startprice" value="0" size="6" />
+																到
+																<input name="endprice" type="text" id="endprice" value="0" size="6" />
+																元之间</td>
+														</tr>
+												</table></td>
+											<td valign="top"><table width="100%" border="0" cellspacing="6" cellpadding="0">
+													<tr>
+														<td><select name="classid" size="8" id="select2" style="width: 100%;height:112px">
+																<option value="0" selected="selected">所有栏目</option>
+															<option value='36'>|-新闻</option><option value='37' style='background:#99C4E3'>&nbsp;&nbsp;|-平台通知</option><option value='38' style='background:#99C4E3'>&nbsp;&nbsp;|-学校通知</option><option value='39' style='background:#99C4E3'>&nbsp;&nbsp;|-社团公告</option><option value='40' style='background:#99C4E3'>&nbsp;&nbsp;|-今日头条</option><option value='1'>|-文章</option><option value='28' style='background:#99C4E3'>&nbsp;&nbsp;|-菜鸟教程</option><option value='41' style='background:#99C4E3'>&nbsp;&nbsp;|-随便写写</option><option value='42' style='background:#99C4E3'>&nbsp;&nbsp;|-表白墙</option><option value='4'>|-图片</option><option value='30' style='background:#99C4E3'>&nbsp;&nbsp;|-校园美景</option><option value='43' style='background:#99C4E3'>&nbsp;&nbsp;|-美工作品</option><option value='44' style='background:#99C4E3'>&nbsp;&nbsp;|-动漫图片</option><option value='7'>|-资源</option><option value='32' style='background:#99C4E3'>&nbsp;&nbsp;|-常用软件</option><option value='45' style='background:#99C4E3'>&nbsp;&nbsp;|-热门游戏</option><option value='46' style='background:#99C4E3'>&nbsp;&nbsp;|-教程集锦</option><option value='47' style='background:#99C4E3'>&nbsp;&nbsp;|-网盘种子</option><option value='10'>|-视频</option><option value='33' style='background:#99C4E3'>&nbsp;&nbsp;|-热门电影</option><option value='49' style='background:#99C4E3'>&nbsp;&nbsp;|-综艺动漫</option><option value='50' style='background:#99C4E3'>&nbsp;&nbsp;|-校园生活</option><option value='48' style='background:#99C4E3'>&nbsp;&nbsp;|-电视剧</option><option value='24'>|-学习</option><option value='34' style='background:#99C4E3'>&nbsp;&nbsp;|-课堂课件</option><option value='51' style='background:#99C4E3'>&nbsp;&nbsp;|-在线学堂</option><option value='52' style='background:#99C4E3'>&nbsp;&nbsp;|-考试题库</option><option value='25'>|-创客中心</option><option value='53' style='background:#99C4E3'>&nbsp;&nbsp;|-网站开发</option><option value='54' style='background:#99C4E3'>&nbsp;&nbsp;|-编程设计</option><option value='35' style='background:#99C4E3'>&nbsp;&nbsp;|-数学建模</option><option value='13'>|-商城</option><option value='14' style='background:#99C4E3'>&nbsp;&nbsp;|-站内购买</option><option value='15' style='background:#99C4E3'>&nbsp;&nbsp;|-站外购买</option><option value='16'>|-综合栏目（导航不显示，用于网站底部，不要删除）</option><option value='17'>&nbsp;&nbsp;|-关于我们</option><option value='55'>&nbsp;&nbsp;|-使用须知</option><option value='19'>&nbsp;&nbsp;|-免责声明</option><option value='20'>&nbsp;&nbsp;|-广告合作</option><option value='21'>&nbsp;&nbsp;|-资源集锦</option><option value='22' style='background:#99C4E3'>|-幻灯片添加（导航不显示，用于首页大图幻灯，不要删除）</option>
+          
+														</select></td>
+													</tr>
+												</table>
+													<table width="100%" border="0" cellpadding="6" cellspacing="0">
+														<tr>
+															<td bgcolor="#F4F4F4"><strong>结果显示</strong></td>
+														</tr>
+														<tr>
+															<td height="30"><select name="orderby" id="select4">
+																	<option value="">按发布日期</option>
+																	<option value="id">信息ID</option>
+																	<option value="plnum">评论数</option>
+																	<option value="onclick">人气</option>
+																	<option value="totaldown">下载数</option>
+																</select>
+																	<select name="myorder" id="select5">
+																		<option value="0">倒序排列</option>
+																		<option value="1">顺序排列</option>
+																	</select>
+															</td>
+														</tr>
+												</table></td>
+										</tr>
+									</table>
+								<table width="100%" border="0" cellpadding="4" cellspacing="0">
+										<tr>
+											<td>关键字：
+												<input name="keyboard" type="text" id="keyboard2" size="60" />
+													<input type="submit" name="Submit22" value="搜索" />
+											</td>
+										</tr>
+									</table>
+							</form></td>
+						</tr>
+					</table></td>
+				</tr>
+			</table></td>
+	</tr>
+</table>
+<footer id="footer">
+  <div class="content">
+    <nav class="inner">
+      <aside id="describe" class="group">
+        <h3>关于我们</h3>
+        <p class="describe-text"><?=$public_r['add_foot_about']?></p>
+        
+        <p class="stamp"></p>
+      </aside>
+      <aside class="group">
+        <h3 class="title">关于</h3>
+        <div class="menu-about-container">
+          <ul id="menu-about" class="menu">
+            [showclasstemp]16,1,0,0[/showclasstemp]
+          </ul>
+        </div>
+      </aside>
+      <aside class="group">
+        <h3 class="title">栏目</h3>
+        <div class="menu-category-container">
+          <ul id="menu-category" class="menu">
+            [showclasstemp]'0',1,0,0[/showclasstemp]
+          </ul>
+        </div>
+      </aside>
+<?php
+if($GLOBALS[navclassid]) //非首页
+{
+?>
+
+<?php
+}
+else 
+{
+?>
+      <aside class="group">
+        <h3 class="title">友情链接</h3>
+        <div class="menu-links-container">
+          <ul id="menu-links" class="menu">
+            [e:loop={'select * from [!db.pre!]enewslink where checked=1 and lpic="" order by lid',20,24,0}]
+            <li><a target="_blank" href="<?=$bqr[lurl]?>"><?=$bqr[lname]?></a></li>
+[/e:loop]
+          </ul>
+        </div>
+      </aside>
+<?php
+}
+?>
+      <aside id="social" class="group">
+        <h3 class="title">关注</h3>
+        <ul>
+          <li>Email: <a href="mailto:<?=$public_r['add_email']?>"><?=$public_r['add_email']?></a></li>
+          <li class="social-email">
+          </li>
+          <li class="social-icon">  <a class="social-qq" rel="external nofollow" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=<?=$public_r['add_qq']?>&site=qq&menu=yes"><i class="fa fa-qq"></i><span class="text-replace">QQ在线联系</span></a>  
+          <a id="social-weixin" data-pop="weixin" class="social-weixin"><i class="fa fa-weixin"></i><span class="text-replace">微信</span></a> </li>
+        </ul>
+      </aside>
+      <div id="weixin" class="popupbox weixin-box">
+        <div class="weixin-header">被窝云资源公众号二维码<a class="popup-close weixin-close">×</a></div>
+        <div class="weixin-content"><span class="weixin-tip">打开微信，对准下方二维码“扫一扫”。</span><img src="<?=$public_r['add_ewm']?>" /></div>
+      </div>
+    </nav>
+    <section class="site-info">
+      <p class="copyright">Copyright &copy; 2012-2015 <a href="http://www.caucbeiwo.cn">航大被窝云资源</a> All Rights Reserved. <?=$public_r['add_icp']?>  <?=$public_r['add_tongji']?></p>
+    </section>
+  </div>
+</footer>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$("#aFloatTools_Show").click(function(){
+		$('#divFloatToolsView').animate({width: 'show', opacity: 'show'}, 'normal',function(){
+			$('#divFloatToolsView').show();
+		});
+		$('#aFloatTools_Show').attr('style','display:none');
+		$('#aFloatTools_Hide').attr('style','display:block');
+	});
+	
+	$("#aFloatTools_Hide").click(function(){
+		$('#divFloatToolsView').animate({width: 'hide', opacity: 'hide'}, 'normal',function(){
+			$('#divFloatToolsView').hide();
+		});
+		$('#aFloatTools_Show').attr('style','display:block');
+		$('#aFloatTools_Hide').attr('style','display:none');
+	});
+	
+});
+</script>
+
+<div class="rides-cs">
+
+	<div class="floatL">
+		<a style="display:block" id="aFloatTools_Show" class="btnOpen" title="查看在线客服" href="javascript:void(0);">展开</a>
+		<a style="display:none" id="aFloatTools_Hide" class="btnCtn" title="关闭在线客服" href="javascript:void(0);">收缩</a>
+	</div>
+	
+	<div id="divFloatToolsView" class="floatR" style="display:none">
+		<div class="cn">
+			<?=$public_r['add_kf']?>
+		</div>
+	</div>
+	
+</div>
+
+</body>
+</html>

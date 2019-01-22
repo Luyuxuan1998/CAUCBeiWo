@@ -1,0 +1,1 @@
+document.write("<option value=\'7\'>|-资源</option><option value=\'32\' style=\'background:#99C4E3\'>&nbsp;&nbsp;|-常用软件</option><option value=\'45\' style=\'background:#99C4E3\'>&nbsp;&nbsp;|-热门游戏</option><option value=\'46\' style=\'background:#99C4E3\'>&nbsp;&nbsp;|-教程集锦</option><option value=\'47\' style=\'background:#99C4E3\'>&nbsp;&nbsp;|-网盘种子</option>");

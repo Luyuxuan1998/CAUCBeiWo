@@ -1,0 +1,1 @@
+<p align='[!--pic.align--]'><a href='[!--pic.bigurl--]' target='_blank'><img src='[!--pic.smallurl--]' border=0[!--pic.width--][!--pic.height--]></a></p>

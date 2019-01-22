@@ -1,0 +1,47 @@
+
+@CHARSET "UTF-8";
+body{ margin:0; padding:0; background:#F0F0F0;font-size:12px; background:url(bg.jpg) repeat;}
+a { background: transparent; transition: all 0.2s linear; -webkit-transition: all 0.2s linear; -moz-transition: all 0.2s linear; -o-transition: all 0.2s linear; }
+a:link, a:visited { color: #4D4B4B;; text-decoration: none; outline: none; }
+a:hover { color: red; _color:;}
+.tip{ width:532px; height:257px;background:url(box.png) no-repeat; position:absolute; left:50%; top:50%; margin-left:-266px; margin-top:-128px;}
+.closebox{ height:48px; overflow:hidden; width:100%;}
+.closebox a{ display:inline-block; width:20px; height:20px; float:right; margin:15px;}
+.message { width:390px; height:90px; overflow:hidden; background:#ccc; margin:50px 0 0 85px; background:url(load.gif) left top no-repeat; text-indent:40px; line-height:35px; font-family:microsoft yahei; font-size:19px;}
+.message a{ display:block; font-size:12px;text-indent:10px;}
+.message a:hover{ text-decoration:underline}
+.otherlink{ height:30px; line-height:30px;margin-top: 32px; font-size:12px; padding:0 20px; width:492px; color:#b7b7b8;}
+.otherlink .fr{ float:right;}
+.otherlink a{color:#b7b7b8;background:url(ico.gif) no-repeat;padding-left:18px; margin-left:5px;}
+.otherlink a:hover{ color:#4D4B4B;}
+a.return{  background-position:0 0;}
+a.next{  background-position:48px -16px; padding:0; padding-right:18px;}
+a.index{  background-position:0 -32px;}
+a.error{  background-position:0 -48px;}
+@media screen and (max-width:720px){
+.tip {
+    width: 280px;
+    height: 158px;
+    background: url(box.png) no-repeat;filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";  
+-moz-background-size:100% 100%;  
+    background-size:100% 100%;  
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -136px;
+    margin-top: -128px;
+}
+
+.message {
+    width: 390px;
+    height: 90px;
+    overflow: hidden;
+    background: #ccc;
+    margin: 20px 0 0 20px;
+    background: url(load.gif) left top no-repeat;
+    text-indent: 40px;
+    line-height: 35px;
+    font-family: microsoft yahei;
+    font-size: 19px;
+}
+}

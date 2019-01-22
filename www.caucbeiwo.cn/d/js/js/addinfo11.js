@@ -1,0 +1,1 @@
+document.write("<option value=\'4\'>|-图片</option><option value=\'30\' style=\'background:#99C4E3\'>&nbsp;&nbsp;|-校园美景</option><option value=\'43\' style=\'background:#99C4E3\'>&nbsp;&nbsp;|-美工作品</option><option value=\'44\' style=\'background:#99C4E3\'>&nbsp;&nbsp;|-动漫图片</option>");

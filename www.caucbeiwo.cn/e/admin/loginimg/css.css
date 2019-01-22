@@ -1,0 +1,62 @@
+body {
+	background:#3c434c;
+	font:14px "Microsoft YaHei","Segoe UI",Tahoma,Arial;
+	}
+.l_foot { padding:20px 40px 25px 0; text-align:center; color:#333; font:12px "Microsoft YaHei","Segoe UI",Tahoma,Arial;}
+.l_foot a { color:#C00; font:12px "Microsoft YaHei","Segoe UI",Tahoma,Arial; text-decoration:none;}
+.l_foot a:hover { color:#C00; font:12px "Microsoft YaHei","Segoe UI",Tahoma,Arial; text-decoration:none;}
+.l_logo {
+	width:455px;
+	height:72px;
+	background:url(logo.png) no-repeat 50% 0;
+	}
+.l_box {
+	clear:both;
+	width:415px;
+	background:#fff;
+	border-radius: 6px;
+	padding:50px 0 0 40px;
+	}
+input, select, button { 
+	vertical-align:middle;
+	font:14px "Microsoft YaHei","Segoe UI",Tahoma,Arial;
+	border:#c6c6c6 1px solid;
+	border-radius: 4px;
+	height:34px;
+	line-height:34px;
+}
+.input1 {
+	width:300px;
+	padding:0 10px;}
+TD {
+	FONT-SIZE: 10pt; LINE-HEIGHT: 14pt
+}
+
+textarea,
+select,
+input,
+.uneditable-input {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+     -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+       -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+          transition: border linear 0.2s, box-shadow linear 0.2s;
+}
+
+textarea:focus,
+input:focus,
+select:focus,
+.uneditable-input:focus {
+  border-color: rgba(82, 168, 236, 0.8);
+  outline: 0;
+  outline: thin dotted \9;
+  /* IE6-9 */
+
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+}

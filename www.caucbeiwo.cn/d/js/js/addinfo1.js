@@ -1,0 +1,1 @@
+document.write("<option value=\'36\'>|-新闻</option><option value=\'37\' style=\'background:#99C4E3\'>&nbsp;&nbsp;|-平台通知</option><option value=\'38\' style=\'background:#99C4E3\'>&nbsp;&nbsp;|-学校通知</option><option value=\'39\' style=\'background:#99C4E3\'>&nbsp;&nbsp;|-社团公告</option><option value=\'40\' style=\'background:#99C4E3\'>&nbsp;&nbsp;|-今日头条</option>");
